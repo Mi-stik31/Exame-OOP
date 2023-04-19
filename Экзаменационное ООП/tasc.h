@@ -3,9 +3,10 @@
 #include <iostream>
 using namespace std;
 
-class Tasc
+class Task
 {
-private:
+	//свойства класса дело
+private:                                                                
 	string _name;
 
 	int _prioriti;
@@ -17,21 +18,23 @@ private:
 
 
 public:
-	Tasc (string name, int prioriti, string description, int* arrayData)
+
+	Task(string name, int prioriti, string description, int* arrayData)   // конструктор
 	{
-
+		// название
 		_name = name;
-
-		_prioriti= prioriti;
-
-		_description = description;
-
-		_arrayData= arrayData;
-
+		//приоритет
+		_prioriti = prioriti;                                                
+		//описание
+		_description = description;                                       
+		//дата выполнения задачи
+		_arrayData = arrayData;                                            
 	}
-	
-	
+	//метод вывода инф
+	void Print();  
 
-
+	//статический метод для создания задачи
+	static Task CreateTask();
 };
+	                                                
 
