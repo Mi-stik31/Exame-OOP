@@ -1,10 +1,9 @@
-#include "tasc.h"
+#include "task.h"
 
 void Task::Print()
 {
 	
-
-
+	std::cout << "Ќазвание задачи: " << this->_name << std::endl;
 }
 //тело метода нов задача
 Task Task::CreateTask()    

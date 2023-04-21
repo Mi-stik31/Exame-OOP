@@ -127,11 +127,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="tasc.cpp" />
+    <ClCompile Include="task.cpp" />
+    <ClCompile Include="todo-list.cpp" />
     <ClCompile Include="Экзаменационное ООП.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="tasc.h" />
+    <ClInclude Include="task.h" />
+    <ClInclude Include="todo-list.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -2,7 +2,7 @@
 #include <string>
 #include <iostream>
 using namespace std;
-
+//класс дело
 class Task
 {
 	//свойства класса дело
@@ -18,8 +18,8 @@ private:
 
 
 public:
-
-	Task(string name, int prioriti, string description, int* arrayData)   // конструктор
+	// конструктор
+	Task(string name, int prioriti, string description, int* arrayData)  
 	{
 		// название
 		_name = name;
@@ -36,5 +36,3 @@ public:
 	//статический метод для создания задачи
 	static Task CreateTask();
 };
-	                                                
-

@@ -18,12 +18,18 @@
     <ClCompile Include="Экзаменационное ООП.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="tasc.cpp">
+    <ClCompile Include="task.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="todo-list.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="tasc.h">
+    <ClInclude Include="task.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="todo-list.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
