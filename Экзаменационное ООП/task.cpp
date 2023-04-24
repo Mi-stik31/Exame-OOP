@@ -2,8 +2,11 @@
 
 void Task::Print()
 {
-	
-	std::cout << "Название задачи: " << this->_name << std::endl;
+	std::cout << "Название дела: " << this->_name << std::endl;
+	std::cout<<"Приоритет дела: " << this->_prioriti << std::endl;
+	std::cout << "Описание дела: " << this->_description << std::endl;
+	std::cout << "Дата и время исполнения дела: " << this->_arrayData << std::endl;
+
 }
 //тело метода нов задача
 Task Task::CreateTask()    

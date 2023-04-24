@@ -1,5 +1,16 @@
 #include "todo-list.h"
 
+std::list<Task>::iterator TaskList::SearchTaskIteratorByName(std::string taskName)
+{
+	for (auto currentTask = this->_allTasks.begin(); currentTask != this->_allTasks.end(); currentTask++)
+	{
+		if (currentTask->GetTaskName() == taskName)
+		{
+			return currentTask;
+		}
+	}
+}
+
 TaskList::TaskList()
 {
 	this->_allTasks = std::list<Task>();
@@ -16,4 +27,9 @@ void TaskList::Print()
 	{
 		currentTaskInList->Print();
 	}
+}
+
+void TaskList::DeleteTask(std::string taskName)
+{
+	this->_allTasks.erase(this->SearchTaskIteratorByName(taskName));
 }

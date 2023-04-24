@@ -35,4 +35,7 @@ public:
 
 	//статический метод для создания задачи
 	static Task CreateTask();
+
+
+	string GetTaskName();
 };
