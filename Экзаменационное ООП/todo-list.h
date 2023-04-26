@@ -28,4 +28,6 @@ public:
 	void Print();
 
 	void DeleteTask(std::string taskName);
+
+	void EditorTask(std::string taskName);
 };

@@ -7,7 +7,10 @@ using namespace std;
 int main()
 
 {
+	setlocale(LC_ALL, "Russian");
 	int actionChoice = 0;
+	
+	
 	//ф-я использующая кодовую страницу для ввода данных(у нас русских букв)
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
@@ -19,28 +22,40 @@ int main()
 	cout << "Если вы хотите удалить дело нажмите 2." << endl;
 	cout << " " << endl;
 
+	//создаем список дел для записи новых дел
+	TaskList myList = TaskList();
+	cin >> actionChoice;
 
 	switch (actionChoice)
-	{//добавить дело
-	case 1:
+	{
+	case 1: 
 	{
 		//создаем новое дело
-		Task tsk = Task::CreateTask();
+		Task newTask = Task::CreateTask();
+		//добавляем в список нов задачу 
+		myList.AddTask(newTask);
+		break;
 	}
 	//удалление дела
 	case 2: 
 	{
 
-	}
-	default:
+		string	taskName = 0;
+		cout << "Введите название дела для удаления." << endl;
+		cin >> taskName;
+		myList.DeleteTask(taskName);
+		myList.Print();//выводим на экран
 		break;
 	}
-	
-	//добавляем в список нов задачу 
-	TaskList myList = TaskList();
-	myList.AddTask(tsk);
-	myList.Print();//выводим на экран
+	case 3: 
+	{
+
+
+		string	changedTasc = 0;
+		cout << "Введите название дела для редактирования." << endl;
+		cin >> changedTasc;
+		myList.EditorTask(changedTasc);
+		break;
 	}
-
-
+	}
 }

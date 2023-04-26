@@ -33,3 +33,10 @@ void TaskList::DeleteTask(std::string taskName)
 {
 	this->_allTasks.erase(this->SearchTaskIteratorByName(taskName));
 }
+//тело по редактированию дела
+void TaskList::EditorTask(std::string taskName)
+{
+	Task editedTask = Task::CreateTask();
+	this->_allTasks.emplace(this->SearchTaskIteratorByName(taskName), editedTask);
+
+}
