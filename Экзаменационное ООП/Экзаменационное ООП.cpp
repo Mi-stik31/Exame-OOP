@@ -22,7 +22,7 @@ int main()
 
 	switch (actionChoice)
 	{//добавить дело
-	case 1: 
+	case 1:
 	{
 		//создаем новое дело
 		Task tsk = Task::CreateTask();
@@ -35,10 +35,12 @@ int main()
 	default:
 		break;
 	}
-	//создаем новую задачу
-	Task tsk = Task::CreateTask();
+	
 	//добавляем в список нов задачу 
 	TaskList myList = TaskList();
 	myList.AddTask(tsk);
 	myList.Print();//выводим на экран
+	}
+
+
 }

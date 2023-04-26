@@ -20,7 +20,7 @@ void TaskList::AddTask(Task newTask)
 {
 	this->_allTasks.push_back(newTask);
 }
-
+//тело метода поиска дела 
 void TaskList::Print()
 {
 	for (auto currentTaskInList = this->_allTasks.begin(); currentTaskInList != this->_allTasks.end(); currentTaskInList++)
@@ -28,7 +28,7 @@ void TaskList::Print()
 		currentTaskInList->Print();
 	}
 }
-
+//тело метода по удалению дела
 void TaskList::DeleteTask(std::string taskName)
 {
 	this->_allTasks.erase(this->SearchTaskIteratorByName(taskName));
