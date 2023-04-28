@@ -29,7 +29,10 @@ private:
 	bool ChechTaskIteratorByName(std::string taskName);
 public:
 	TaskList();
-
+	/// <summary>
+	/// 
+	/// </summary>
+	/// <param name="newTask"></param>
 	void AddTask(Task newTask);
 
 	/// <summary>
@@ -38,10 +41,13 @@ public:
 	void Print();
 
 	/// <summary>
-	/// 
+	/// Удалть дело
 	/// </summary>
 	/// <param name="taskName"></param>
 	bool DeleteTask(std::string taskName);
-
+	/// <summary>
+	/// Редактировать дело
+	/// </summary>
+	/// <param name="taskName"></param>
 	void EditorTask(std::string taskName);
 };

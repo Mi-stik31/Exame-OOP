@@ -10,7 +10,7 @@ std::list<Task>::iterator TaskList::SearchTaskIteratorByName(std::string taskNam
 		}
 	}
 }
-
+// “ело проверки существовани€ задачи в списке
 bool TaskList::ChechTaskIteratorByName(std::string taskName)
 {
 	bool resultSearch = false;
@@ -26,17 +26,17 @@ bool TaskList::ChechTaskIteratorByName(std::string taskName)
 
 	return resultSearch;
 }
-
+// —оздаем список дел(дл€ записи всех дел)
 TaskList::TaskList()
 {
 	this->_allTasks = std::list<Task>();
 }
-//тело метода по добавлению всех задач
+// “ело метода по добавлению всех задач
 void TaskList::AddTask(Task newTask)
 {
 	this->_allTasks.push_back(newTask);
 }
-
+// “ело метода по выводу всех задач
 void TaskList::Print()
 {
 	for (auto currentTaskInList = this->_allTasks.begin(); currentTaskInList != this->_allTasks.end(); currentTaskInList++)
@@ -44,12 +44,13 @@ void TaskList::Print()
 		currentTaskInList->Print();
 	}
 }
-//тело метода по удалению дела
+// “ело метода по удалению дела
 bool TaskList::DeleteTask(std::string taskName)
 {
 	// –езультат удалени€ дела
 	bool deleteResult = false;
 
+	// ѕровер€ем существует ли дело с таким названием в списке дел
 	if(this->ChechTaskIteratorByName(taskName))
 	{
 		this->_allTasks.erase(this->SearchTaskIteratorByName(taskName));
@@ -58,10 +59,17 @@ bool TaskList::DeleteTask(std::string taskName)
 
 	return deleteResult;
 }
-//тело по редактированию дела
+// “ело по поиску дела по имени и его редактированию 
 void TaskList::EditorTask(std::string taskName)
 {
-	Task editedTask = Task::CreateTask();
-	this->_allTasks.emplace(this->SearchTaskIteratorByName(taskName), editedTask);
-
+	if (this->ChechTaskIteratorByName(taskName))
+	{
+		Task editedTask = Task::CreateTask();
+		this->DeleteTask(taskName);
+		this->AddTask(editedTask);
+	}
+	else
+	{
+		std::cout << "“акого дела не найдено, введите дело еще раз" << std::endl;
+	}
 }

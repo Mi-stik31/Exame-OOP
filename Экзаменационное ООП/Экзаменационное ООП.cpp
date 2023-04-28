@@ -39,10 +39,8 @@ int main()
 			cin.ignore();
 
 			// Создать новое дело
-			//Task newTask = Task::CreateTask();
-			int a[3] = {3, 5, 2023};
-			Task newTask = Task("spat", 6, "d", a);
-
+			Task newTask = Task::CreateTask();
+			
 			// Добавляем в список дел новую задачу 
 			myList.AddTask(newTask);
 
@@ -62,6 +60,9 @@ int main()
 			cout << "Введите название дела для удаления: " << endl;
 			getline(cin, nameTaskForSearch);
 
+			// Очищаем консоль
+			system("cls");
+
 			if (!myList.DeleteTask(nameTaskForSearch))
 			{
 				std::cout << "Дело не было удалено" << std::endl;
@@ -71,12 +72,21 @@ int main()
 		}
 		case 3:
 		{
+			cin.ignore();
 
+			string nameTaskForSearch = "";
+			cout << "Введите название дела для редактирования: " << endl;
+			getline(cin, nameTaskForSearch);
 
-			string	changedTasc = 0;
-			cout << "Введите название дела для редактирования." << endl;
-			cin >> changedTasc;
-			myList.EditorTask(changedTasc);
+			// Очищаем консоль
+			system("cls");
+
+			myList.EditorTask(nameTaskForSearch);
+
+			// Очищаем консоль
+			system("cls");
+
+			myList.Print();
 			break;
 		}
 		}

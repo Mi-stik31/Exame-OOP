@@ -15,8 +15,6 @@ private:
 
 	int* _arrayData;
 
-
-
 public:
 	// конструктор
 	Task(string name, int prioriti, string description, int* arrayData)  
@@ -36,9 +34,9 @@ public:
 	/// </summary>
 	void Print();  
 
-	//статический метод для создания задачи
+	// Статический метод для создания задачи
 	static Task CreateTask();
 
-
+	// Получить название задачи (для дальнейшей работы с выбанным делом)
 	string GetTaskName();
 };

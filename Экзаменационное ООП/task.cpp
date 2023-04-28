@@ -42,7 +42,7 @@ Task Task::CreateTask()
 
 	return newTask;
 }
-
+//
 string Task::GetTaskName()
 {
 	return this->_name;
