@@ -1,7 +1,7 @@
 ﻿#include <iostream>
 #include "task.h"
 #include "todo-list.h"
-# include< Windows.h >
+#include <Windows.h>
 using namespace std;
 
 int main()
@@ -88,6 +88,15 @@ int main()
 
 			myList.Print();
 			break;
+		}
+		case 4: 
+		{
+			cin.ignore();
+			string searchTaskName = "";
+			cout << "Введите название дела котоое вы хотите найти: " << endl;
+			getline(cin, searchTaskName);
+
+
 		}
 		}
 	}
