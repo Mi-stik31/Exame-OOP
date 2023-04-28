@@ -11,6 +11,22 @@ std::list<Task>::iterator TaskList::SearchTaskIteratorByName(std::string taskNam
 	}
 }
 
+bool TaskList::ChechTaskIteratorByName(std::string taskName)
+{
+	bool resultSearch = false;
+
+	for (auto currentTask = this->_allTasks.begin(); currentTask != this->_allTasks.end(); currentTask++)
+	{
+		if (currentTask->GetTaskName() == taskName)
+		{
+			resultSearch = true;
+			break;
+		}
+	}
+
+	return resultSearch;
+}
+
 TaskList::TaskList()
 {
 	this->_allTasks = std::list<Task>();
@@ -20,7 +36,7 @@ void TaskList::AddTask(Task newTask)
 {
 	this->_allTasks.push_back(newTask);
 }
-//тело метода поиска дела 
+
 void TaskList::Print()
 {
 	for (auto currentTaskInList = this->_allTasks.begin(); currentTaskInList != this->_allTasks.end(); currentTaskInList++)
@@ -29,9 +45,18 @@ void TaskList::Print()
 	}
 }
 //тело метода по удалению дела
-void TaskList::DeleteTask(std::string taskName)
+bool TaskList::DeleteTask(std::string taskName)
 {
-	this->_allTasks.erase(this->SearchTaskIteratorByName(taskName));
+	// Результат удаления дела
+	bool deleteResult = false;
+
+	if(this->ChechTaskIteratorByName(taskName))
+	{
+		this->_allTasks.erase(this->SearchTaskIteratorByName(taskName));
+		deleteResult = true;
+	}
+
+	return deleteResult;
 }
 //тело по редактированию дела
 void TaskList::EditorTask(std::string taskName)
