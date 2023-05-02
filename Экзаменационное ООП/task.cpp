@@ -37,7 +37,7 @@ Task Task::CreateTask()
 	cout << "Введите год для выполнения задачи : " << endl;
 	cin >> arrayData[2];
 
-	// Создаем экземпляр класса (новая задача)
+	// Создаем объект (новая задача)
 	Task newTask(name, prioriti, description, arrayData);
 
 	return newTask;

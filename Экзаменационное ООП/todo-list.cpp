@@ -73,3 +73,12 @@ void TaskList::EditorTask(std::string taskName)
 		std::cout << "Такого дела не найдено, введите дело еще раз" << std::endl;
 	}
 }
+// Тело поиска дела по имени
+void TaskList::SearchByName(std::string taskName)
+{
+	if (this->ChechTaskIteratorByName(taskName)) 
+	{
+
+	}
+
+}

@@ -90,12 +90,37 @@ int main()
 			break;
 		}
 		case 4: 
-		{
-			cin.ignore();
-			string searchTaskName = "";
-			cout << "Введите название дела котоое вы хотите найти: " << endl;
-			getline(cin, searchTaskName);
+		{// Выбор поиска
+			int searchSelection = 0;
+			cout << "Выберите пункт по которому вы хотите осуществить поиск дела: " << endl;
+			cout << " " << endl;
+			cout << "Если вы хотите найти дело по имени нажмите 1. " << endl;
+			cout << " " << endl;
+			cout << "Если вы хотите найти дело по приоритету нажмите 2." << endl;
+			cout << " " << endl;
+			cout << "Если вы хотите найти дело по описанию нажмите 3." << endl;
+			cout << " " << endl;
+			cout << "Если вы хотите найти дело по дате нажмите 4." << endl;
+			cin >> searchSelection;
+			switch (searchSelection)
+			{
+			case 1:
+				cin.ignore();
+				string searchTaskName = "";
+				cout << "Введите название дела котрое вы хотите найти: " << endl;
+				getline(cin, searchTaskName);
+				system("cls");
+				
+			default:
+				break;
+			
 
+
+		}
+		case 5:
+		{
+			
+			}
 
 		}
 		}

@@ -30,7 +30,7 @@ private:
 public:
 	TaskList();
 	/// <summary>
-	/// 
+	/// добавить новое дело
 	/// </summary>
 	/// <param name="newTask"></param>
 	void AddTask(Task newTask);
@@ -50,4 +50,8 @@ public:
 	/// </summary>
 	/// <param name="taskName"></param>
 	void EditorTask(std::string taskName);
-};
+	/// <summary>
+	/// ѕоиск дела по имени
+    /// <param name="taskName"></param>	
+	/// </summary>	
+	void SearchByName(std::string taskName);
