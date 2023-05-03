@@ -9,7 +9,7 @@ class Task
 private:                                                                
 	string _name;
 
-	int _prioriti;
+	int _priority;
 
 	string _description;
 
@@ -17,12 +17,12 @@ private:
 
 public:
 	// конструктор
-	Task(string name, int prioriti, string description, int* arrayData)  
+	Task(string name, int priority, string description, int* arrayData)  
 	{
 		// название
 		_name = name;
 		//приоритет
-		_prioriti = prioriti;                                                
+		_priority = priority;                                                
 		//описание
 		_description = description;                                       
 		//дата выполнени€ задачи
@@ -39,4 +39,7 @@ public:
 
 	// ѕолучить название задачи (дл€ дальнейшей работы с выбанным делом)
 	string GetTaskName();
+
+	// ѕолуить приоритет дела
+	int GetPriority();
 };

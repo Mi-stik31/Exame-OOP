@@ -15,24 +15,42 @@ private:
 	std::list<Task> _allTasks;
 
 	/// <summary>
-	/// Поиск дела для удаления
+	/// Получить указатель на задачу по её имени
 	/// </summary>
-	/// <param name="taskName"></param>
-	/// <returns></returns>
-	std::list<Task>::iterator SearchTaskIteratorByName(std::string taskName);
+	/// <param name="taskName">Название задачи</param>
+	/// <returns>Указатель на задачу в списке задач</returns>
+	std::list<Task>::iterator SearchTaskIteratorBy(std::string taskName);
+
+	/// <summary>
+	/// Получить указатель на задачу по её приоритету
+	/// </summary>
+	/// <param name="taskName">Приоритет задачи</param>
+	/// <returns>Указатель на задачу в списке задач</returns>
+	std::list<Task>::iterator SearchTaskIteratorBy(int priority);
 
 	/// <summary>
 	/// Проверить существует ли задача в списке
 	/// </summary>
-	/// <param name="taskName"></param>
-	/// <returns></returns>
-	bool ChechTaskIteratorByName(std::string taskName);
-public:
-	TaskList();
+	/// <param name="taskName">Название задачи</param>
+	/// <returns>Существует ли задача</returns>
+	bool ChechTaskIteratorBy(std::string taskName);
+
 	/// <summary>
-	/// добавить новое дело
+	/// Проверить существует ли задача в списке
 	/// </summary>
-	/// <param name="newTask"></param>
+	/// <param name="taskName">Приоритет задачи</param>
+	/// <returns>Существует ли задача</returns>
+	bool ChechTaskIteratorBy(int priority);
+public:
+	/// <summary>
+	/// Конструктор по умолчанию
+	/// </summary>
+	TaskList();
+
+	/// <summary>
+	/// Добавить новое дело
+	/// </summary>
+	/// <param name="newTask">Новая задача</param>
 	void AddTask(Task newTask);
 
 	/// <summary>
@@ -41,17 +59,27 @@ public:
 	void Print();
 
 	/// <summary>
-	/// Удалть дело
+	/// Удалить дело
 	/// </summary>
-	/// <param name="taskName"></param>
+	/// <param name="taskName">Название задачи</param>
 	bool DeleteTask(std::string taskName);
+
 	/// <summary>
 	/// Редактировать дело
 	/// </summary>
-	/// <param name="taskName"></param>
+	/// <param name="taskName">Название задачи</param>
 	void EditorTask(std::string taskName);
+
 	/// <summary>
 	/// Поиск дела по имени
-    /// <param name="taskName"></param>	
+	/// <param name="taskName">Название задачи</param>	
 	/// </summary>	
 	void SearchByName(std::string taskName);
+
+	/// <summary>
+	/// Поиск дела по приоритету
+	/// </summary>
+	/// <param name="priority">Приоритет дела</param>
+	void SearchByPriority(int priority);
+
+};

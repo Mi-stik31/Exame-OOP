@@ -3,7 +3,7 @@
 void Task::Print()
 {
 	std::cout << "Название дела: " << this->_name << std::endl;
-	std::cout<<"Приоритет дела: " << this->_prioriti << std::endl;
+	std::cout<<"Приоритет дела: " << this->_priority << std::endl;
 	std::cout << "Описание дела: " << this->_description << std::endl;
 	std::cout << "Дата исполнения дела: " <<  std::endl;
 	std::cout << "День: " << this->_arrayData[0] << std::endl;
@@ -42,8 +42,13 @@ Task Task::CreateTask()
 
 	return newTask;
 }
-//
+
 string Task::GetTaskName()
 {
 	return this->_name;
+}
+
+int Task::GetPriority()
+{
+	return this->_priority;
 }

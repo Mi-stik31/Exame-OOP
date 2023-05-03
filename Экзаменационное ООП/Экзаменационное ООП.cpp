@@ -28,6 +28,8 @@ int main()
 		cout << " " << endl;
 		cout << "Если вы хотите редактировать дело нажмите 3." << endl;
 		cout << " " << endl;
+		cout << "Если вы хотите найти дело нажмите 4." << endl;
+		cout << " " << endl;
 
 		cin >> actionChoice;
 
@@ -102,25 +104,33 @@ int main()
 			cout << " " << endl;
 			cout << "Если вы хотите найти дело по дате нажмите 4." << endl;
 			cin >> searchSelection;
+
 			switch (searchSelection)
 			{
 			case 1:
+			{
 				cin.ignore();
 				string searchTaskName = "";
 				cout << "Введите название дела котрое вы хотите найти: " << endl;
 				getline(cin, searchTaskName);
 				system("cls");
-				
-			default:
+				myList.SearchByName(searchTaskName);
 				break;
-			
-
-
+			}
+			case 2: 
+			{
+				cin.ignore();
+				int priority = 0;
+				cout << "Введите цифу приоритета дела для поиска: " << endl;
+				cin >> priority;
+				system("cls");
+				myList.SearchByPriority(priority);
+				break;
+			}
+			}
 		}
 		case 5:
 		{
-			
-			}
 
 		}
 		}
