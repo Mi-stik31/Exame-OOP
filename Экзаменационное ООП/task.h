@@ -42,4 +42,10 @@ public:
 
 	// Полуить приоритет дела
 	int GetPriority();
+
+	// Получить описание дела
+	string GetDescription();
+
+	// Полуить дату дела
+	int* GetArrayData();
 };

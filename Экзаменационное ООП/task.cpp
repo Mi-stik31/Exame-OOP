@@ -52,3 +52,12 @@ int Task::GetPriority()
 {
 	return this->_priority;
 }
+string Task::GetDescription()
+{
+	return this->_description;
+}
+
+int* Task::GetArrayData()
+{
+	return this->_arrayData;
+}

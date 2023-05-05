@@ -4,7 +4,7 @@ std::list<Task>::iterator TaskList::SearchTaskIteratorBy(std::string taskName)
 {
 	for (auto currentTask = this->_allTasks.begin(); currentTask != this->_allTasks.end(); currentTask++)
 	{
-		if (currentTask->GetTaskName() == taskName)
+		if (currentTask->GetTaskName().find(taskName))
 		{
 			return currentTask;
 		}
@@ -22,13 +22,36 @@ std::list<Task>::iterator TaskList::SearchTaskIteratorBy(int priority)
 	}
 }
 
+std::list<Task>::iterator TaskList::SearchTaskIteratorByDescription(std::string description)
+{
+	for (auto currentTask = this->_allTasks.begin(); currentTask != this->_allTasks.end(); currentTask++)
+	{
+		if (currentTask->GetTaskName().find(description))
+		{
+			return currentTask;
+		}
+	}
+}
+
+std::list<Task>::iterator TaskList::SearchTaskIteratorByData(int* arrayData)
+{
+	for (auto currentTask = this->_allTasks.begin(); currentTask != this->_allTasks.end(); currentTask++)
+	{
+		if (currentTask->GetArrayData()[0] == arrayData[0] && 
+			currentTask->GetArrayData()[1] == arrayData[1] &&
+			currentTask->GetArrayData()[2] == arrayData[2])
+		{
+			return currentTask;
+		}
+	}
+}
 bool TaskList::ChechTaskIteratorBy(std::string taskName)
 {
 	bool resultSearch = false;
 
 	for (auto currentTask = this->_allTasks.begin(); currentTask != this->_allTasks.end(); currentTask++)
 	{
-		if (currentTask->GetTaskName() == taskName)
+		if (currentTask->GetTaskName().find(taskName))
 		{
 			resultSearch = true;
 			break;
@@ -45,6 +68,40 @@ bool TaskList::ChechTaskIteratorBy(int priority)
 	for (auto currentTask = this->_allTasks.begin(); currentTask != this->_allTasks.end(); currentTask++)
 	{
 		if (currentTask->GetPriority() == priority)
+		{
+			resultSearch = true;
+			break;
+		}
+	}
+
+	return resultSearch;
+}
+
+bool TaskList::ChechTaskIteratorByDescription(std::string description)
+{
+	bool resultSearch = false;
+
+	for (auto currentTask = this->_allTasks.begin(); currentTask != this->_allTasks.end(); currentTask++)
+	{
+		if (currentTask->GetTaskName().find(description))
+		{
+			resultSearch = true;
+			break;
+		}
+	}
+
+	return resultSearch;
+}
+
+bool TaskList::ChechTaskIteratorByData(int* arrayData)
+{
+	bool resultSearch = false;
+
+	for (auto currentTask = this->_allTasks.begin(); currentTask != this->_allTasks.end(); currentTask++)
+	{
+		if (currentTask->GetArrayData()[0] == arrayData[0] &&
+			currentTask->GetArrayData()[1] == arrayData[1] &&
+			currentTask->GetArrayData()[2] == arrayData[2])
 		{
 			resultSearch = true;
 			break;
@@ -121,6 +178,31 @@ void TaskList::SearchByPriority(int priority)
 	}
 	else
 	{
-		std::cout << "Такого дела не найдено, введите дело еще раз" << std::endl;
+		std::cout << "Такого приоритета не найдено, введите приоритет еще раз" << std::endl;
 	}
+}
+
+void TaskList::SearchByDescription(std::string description)
+{
+	if (this->ChechTaskIteratorByDescription(description))
+	{
+		this->SearchTaskIteratorByDescription(description)->Print();
+	}
+	else
+	{
+		std::cout << "Такого описания не найдено, введите описание еще раз" << std::endl;
+	}
+}
+
+void TaskList::SearchDate(int* arrayData)
+{
+		if (this->ChechTaskIteratorByData(arrayData))
+		{
+			this->SearchTaskIteratorByData(arrayData)->Print();
+		}
+		else
+		{
+			std::cout << "Такой  даты не найдено, введите дату еще раз" << std::endl;
+		}
+	
 }
