@@ -34,6 +34,7 @@ private:
 	/// <param name="taskName">Описание задачи</param>
 	/// <returns>Указатель на задачу в списке задач</returns>
 	std::list<Task>::iterator SearchTaskIteratorByDescription(std::string description);
+
 	/// <summary>
 	/// Получить указатель на задачу по её дате
 	/// </summary>
@@ -120,4 +121,9 @@ public:
 	/// </summary>
 	/// <param name="arrayData">Дата дела</param>
 	void SearchDate(int* arrayData);
+	/// <summary>
+	/// Вывод дела по дате
+	/// </summary>
+	/// <param name="arrayData">Дата дела</param>
+	void PrintTaskByDate(int* arrayData);
 };

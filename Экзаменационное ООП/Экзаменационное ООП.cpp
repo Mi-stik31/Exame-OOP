@@ -29,6 +29,9 @@ int main()
 		cout << " " << endl;
 		cout << "Если вы хотите найти дело нажмите 4." << endl;
 		cout << " " << endl;
+		cout << "Если вы хотите вывести дело нажмите 5." << endl;
+		cout << " " << endl;
+
 
 		cin >> actionChoice;
 
@@ -153,6 +156,7 @@ int main()
 			}
 			}
 		}
+
 		}
 		}
 	}

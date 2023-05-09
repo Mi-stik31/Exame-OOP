@@ -206,3 +206,15 @@ void TaskList::SearchDate(int* arrayData)
 		}
 	
 }
+
+void TaskList::PrintTaskByDate(int* arrayData)
+{
+	if (this->ChechTaskIteratorByData(arrayData))
+	{
+		this->SearchTaskIteratorByData(arrayData)->Print();
+	}
+	else
+	{
+		std::cout << "Такой  даты не найдено, введите дату еще раз" << std::endl;
+	}
+}
