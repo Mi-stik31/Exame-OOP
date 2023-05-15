@@ -9,12 +9,11 @@ int main()
 	setlocale(LC_ALL, "Russian");
 	int actionChoice = 0;
 
-
-	//ф-я использующая кодовую страницу для ввода данных(у нас русских букв)+изменение шрифта(для корректнй работы)
+	// Ф-я использующая кодовую страницу для ввода данных(у нас русских букв)+изменение шрифта(для корректнй работы)
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
 
-	//создаем список дел для записи новых дел
+	// Создаем список дел для записи новых дел
 	TaskList myList = TaskList();
 
 	while (actionChoice != 7)
@@ -156,7 +155,44 @@ int main()
 			}
 			}
 		}
+		case 5:
+		{
+			int choosingOutpuOfTask = 0;
+			cout << "Введите номер для отображения дела: " << endl;
+			cout << " " << endl;
+			cout << "Если вы хотите вывести дела на день нажмите 1. " << endl;
+			cout << " " << endl;
+			cout << "Если вы хотите вывести дела на неделю нажмите 2. " << endl;
+			cout << " " << endl;
+			cout << "Если вы хотите вывести дела на месяц нажмите 3. " << endl;
+			cin >> choosingOutpuOfTask;
+			switch (choosingOutpuOfTask)
+			{
+			case 1:
+			{
+
+				cin.ignore();
+				int date[3] = {};
+				cout << "Введите дату для вывода дела : " << endl;
+				cout << "Введите день: ";
+				cin >> date[0];
+				cout << "Введите месяц: ";
+				cin >> date[1];
+				cout << "Введите год: ";
+				cin >> date[2];
+				system("cls");
+				myList.PrintTaskOutputByDate(date);
+				break;
+			}
+
+			}
+
+
+		
 
 		}
+
 		}
+
 	}
+}

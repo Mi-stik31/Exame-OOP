@@ -66,7 +66,7 @@ private:
 	/// <summary>
 	/// Проверить существует ли задача в списке
 	/// </summary>
-	/// <param name="taskName">Приоритет задачи</param>
+	/// <param name="taskName">Дата дела</param>
 	/// <returns>Существует ли задача</returns>
 	bool ChechTaskIteratorByData(int* arrayData);
 	
@@ -116,14 +116,17 @@ public:
 	/// </summary>
 	/// <param name="priority">Описание дела</param>
 	void SearchByDescription(std::string description);
+
 	/// <summary>
 	/// Поиск дела по дате
 	/// </summary>
 	/// <param name="arrayData">Дата дела</param>
 	void SearchDate(int* arrayData);
+
 	/// <summary>
-	/// Вывод дела по дате
+	/// Вывод дел по дате(на день)
 	/// </summary>
-	/// <param name="arrayData">Дата дела</param>
-	void PrintTaskByDate(int* arrayData);
+	/// <param name="arrayData">Дата дел</param>
+	void PrintTaskOutputByDate(int* arrayData);
+
 };

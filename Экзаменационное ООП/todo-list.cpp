@@ -202,19 +202,23 @@ void TaskList::SearchDate(int* arrayData)
 		}
 		else
 		{
-			std::cout << "Такой  даты не найдено, введите дату еще раз" << std::endl;
+			std::cout << "На такую дату дел не найдено, введите дату еще раз" << std::endl;
 		}
-	
 }
 
-void TaskList::PrintTaskByDate(int* arrayData)
+void TaskList::PrintTaskOutputByDate(int* arrayData)
 {
-	if (this->ChechTaskIteratorByData(arrayData))
+	for (auto currentTaskInList = this->_allTasks.begin(); currentTaskInList != this->_allTasks.end(); currentTaskInList++)
 	{
-		this->SearchTaskIteratorByData(arrayData)->Print();
-	}
-	else
-	{
-		std::cout << "Такой  даты не найдено, введите дату еще раз" << std::endl;
+		if (currentTaskInList->GetArrayData()[0] == arrayData[0] &&
+			currentTaskInList->GetArrayData()[1] == arrayData[1] &&
+			currentTaskInList->GetArrayData()[2] == arrayData[2])
+		{
+			currentTaskInList->Print();
+		}
+		else
+		{
+			std::cout << "На такую дату дел не найдено, введите дату еще раз" << std::endl;
+		}
 	}
 }
